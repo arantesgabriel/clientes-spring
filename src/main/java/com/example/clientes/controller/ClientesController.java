@@ -10,23 +10,29 @@ import org.springframework.web.bind.annotation.*;
 import java.util.stream.Stream;
 
 @RestController
+@CrossOrigin("*")
 @RequestMapping("clientes")
 public class ClientesController {
 
     @Autowired
     private ClienteRepository clienteRepository;
 
-    @GetMapping
+    @GetMapping("/buscar")
     public Stream<ClienteResponseDTO> buscarClientes() {
         Stream<ClienteResponseDTO> clientes = clienteRepository.findAll().stream().map(ClienteResponseDTO::new);
         return clientes;
     }
 
-    @PostMapping
+    @PostMapping("/cadastrar")
     public void cadastrarCliente (@RequestBody ClienteRequestDTO cliente){
         Cliente novocliente = new Cliente(cliente);
         clienteRepository.save(novocliente);
         return;
+    }
+
+    @DeleteMapping("/deletarConta/{codigo}")
+    public void deletarConta(@PathVariable Long codigo){
+        clienteRepository.deleteById(codigo);
     }
 
 }
