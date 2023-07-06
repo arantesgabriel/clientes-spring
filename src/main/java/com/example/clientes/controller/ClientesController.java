@@ -23,9 +23,10 @@ public class ClientesController {
     }
 
     @PostMapping
-    public void cadastrarCliente(@RequestBody ClienteRequestDTO novoCliente){
-        Cliente cliente = new Cliente(novoCliente);
-        clienteRepository.save(novoCliente);
+    public void cadastrarCliente (@RequestBody ClienteRequestDTO cliente){
+        Cliente novocliente = new Cliente(cliente);
+        clienteRepository.save(novocliente);
+        return;
     }
 
 }

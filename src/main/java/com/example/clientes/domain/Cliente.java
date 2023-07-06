@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 public class Cliente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "codcli")
     private Long codigo;
 
@@ -25,6 +25,10 @@ public class Cliente {
         this.nome = novoCliente.nome();
         this.email = novoCliente.email();
         this.senha = novoCliente.senha();
+    }
+
+    public Cliente() {
+
     }
 
     public Long getCodigo() {

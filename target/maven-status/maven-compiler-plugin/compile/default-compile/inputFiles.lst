@@ -1,2 +1,8 @@
 C:\Dev\clientes-angular-spring\clientes-spring\src\main\java\com\example\clientes\controller\ClientesController.java
+C:\Dev\clientes-angular-spring\clientes-spring\src\main\java\com\example\clientes\domain\Cliente.java
 C:\Dev\clientes-angular-spring\clientes-spring\src\main\java\com\example\clientes\ClientesApplication.java
+C:\Dev\clientes-angular-spring\clientes-spring\src\main\java\com\example\clientes\domain\Funcionario.java
+C:\Dev\clientes-angular-spring\clientes-spring\src\main\java\com\example\clientes\DTO\ClienteRequestDTO.java
+C:\Dev\clientes-angular-spring\clientes-spring\src\main\java\com\example\clientes\repository\FuncionarioRepository.java
+C:\Dev\clientes-angular-spring\clientes-spring\src\main\java\com\example\clientes\DTO\ClienteResponseDTO.java
+C:\Dev\clientes-angular-spring\clientes-spring\src\main\java\com\example\clientes\repository\ClienteRepository.java
