@@ -1,4 +1,4 @@
-package com.example.clientes.domain;
+package com.example.clientes.entities;
 
 import jakarta.persistence.*;
 
