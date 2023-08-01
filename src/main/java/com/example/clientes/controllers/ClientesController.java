@@ -18,7 +18,7 @@ public class ClientesController {
 
     @GetMapping("/listar")
     public List<ClienteResponseDTO> buscarClientes() {
-        return clienteService.buscarClientes();
+        return clienteService.buscarTodosClientes();
     }
 
     @PostMapping("/cadastrar")

@@ -29,7 +29,7 @@ public class FuncionarioService {
         boolean credenciaisValidas = funcionarioRepository.existsByUsuarioAndSenha(usuario, senha);
 
         if (credenciaisValidas) {
-            return "Credenciais válidas. Login bem-sucedido!";
+            return "Login bem-sucedido!";
         } else {
             throw new Exception("Credenciais inválidas.");
         }
