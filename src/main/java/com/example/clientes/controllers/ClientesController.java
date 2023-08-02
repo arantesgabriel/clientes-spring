@@ -2,6 +2,7 @@ package com.example.clientes.controllers;
 
 import com.example.clientes.DTO.ClienteRequestDTO;
 import com.example.clientes.DTO.ClienteResponseDTO;
+import com.example.clientes.entities.Cliente;
 import com.example.clientes.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class ClientesController {
     private ClienteService clienteService;
 
     @GetMapping("/listar")
-    public List<ClienteResponseDTO> buscarClientes() {
+    public List<Cliente> buscarClientes() {
         return clienteService.buscarTodosClientes();
     }
 
