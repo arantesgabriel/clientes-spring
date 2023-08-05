@@ -1,10 +1,11 @@
 package com.example.clientes.controllers;
 
 import com.example.clientes.DTO.ClienteRequestDTO;
-import com.example.clientes.DTO.ClienteResponseDTO;
 import com.example.clientes.entities.Cliente;
+import com.example.clientes.exceptions.CodigoNuloException;
 import com.example.clientes.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,6 +26,12 @@ public class ClientesController {
     @PostMapping("/cadastrar")
     public void cadastrarCliente(@RequestBody ClienteRequestDTO clienteDTO) {
         clienteService.cadastrarCliente(clienteDTO);
+    }
+
+    @PostMapping("/editar")
+    public ResponseEntity<String> editarCliente(@RequestBody Cliente cliente) throws CodigoNuloException {
+        clienteService.editarCliente(cliente);
+        return ResponseEntity.ok("Cliente atualizado com sucesso!");
     }
 
     @DeleteMapping("/deletarConta/{codigo}")
