@@ -5,10 +5,13 @@ import com.example.clientes.entities.Cliente;
 import com.example.clientes.exceptions.CodigoNuloException;
 import com.example.clientes.services.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
@@ -29,9 +32,12 @@ public class ClientesController {
     }
 
     @PostMapping("/editar")
-    public ResponseEntity<String> editarCliente(@RequestBody Cliente cliente) throws CodigoNuloException {
+    public ResponseEntity<HashMap<String, String>> editarCliente(@RequestBody Cliente cliente) throws CodigoNuloException {
         clienteService.editarCliente(cliente);
-        return ResponseEntity.ok("Cliente atualizado com sucesso!");
+        HashMap<String, String> responseMap = new HashMap<>();
+        responseMap.put("message", "Cliente atualizado com sucesso!");
+
+        return ResponseEntity.status(HttpStatus.OK).body(responseMap);
     }
 
     @DeleteMapping("/deletarConta/{codigo}")

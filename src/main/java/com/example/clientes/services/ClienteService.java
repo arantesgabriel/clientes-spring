@@ -36,7 +36,7 @@ public class ClienteService {
             throw new CodigoNuloException("O ID não pode ser nulo.");
         } else {
             Cliente novoCliente = clienteRepository.findById(cliente.getCodigo())
-                    .orElseThrow(() -> new RuntimeException("Conta não encontrada com o código informado."));
+                    .orElseThrow(() -> new CodigoNuloException("Conta não encontrada com o código informado."));
             novoCliente.setCodigo(cliente.getCodigo());
             novoCliente.setNome(cliente.getNome());
             novoCliente.setEmail(cliente.getEmail());
